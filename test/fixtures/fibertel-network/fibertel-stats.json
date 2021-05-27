@@ -1,0 +1,10 @@
+{
+  "tx": 45,
+  "freqTx": 38600,
+  "rx": 5,
+  "freqRx": 603000,
+  "mer": 38.6,
+  "equipo": "DPC3848VE",
+  "descripcion": "Cisco DPC3848VE DOCSIS 3.0 DB-WiFi(3x3) Apps Docway <>",
+  "versionOs": "\"dpc3800-v303r204318-200508aARG\""
+}
