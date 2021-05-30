@@ -14,12 +14,13 @@ test.before(async _t => {
   }
 })
 
-test('parseStats on a fibertel network', t => {
+test('Call parseStats on a fibertel network', t => {
   const stats: FibertelStats = parseStats(fixtures['fibertel-network'].provisioning)
   t.deepEqual(stats, fixtures['fibertel-network']['fibertel-stats'])
 })
 
-test('parseStats on a non fibertel network', t => {
-  const fnParseStats = (): void => { parseStats(fixtures['non-fibertel-network'].provisioning) }
-  t.throws(fnParseStats)
+test('Call parseStats on a non fibertel network', t => {
+  t.throws(() => {
+    parseStats(fixtures['non-fibertel-network'].provisioning)
+  })
 })

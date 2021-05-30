@@ -2,7 +2,12 @@ import axios from 'axios'
 import cheerio from 'cheerio'
 import { sanitizeKey, sanitizeValue } from './utils'
 
-const provisioningUrl = process.env.PROVISIONING_URL ?? 'http://provisioning.fibertel.com.ar/asp/nivelesPrima.asp'
+export const provisioning = {
+  host: 'http://provisioning.fibertel.com.ar',
+  path: '/asp/nivelesPrima.asp'
+}
+
+export const provisioningUrl = process.env.PROVISIONING_URL ?? `${provisioning.host}${provisioning.path}`
 
 export interface FibertelStats {
   tx: number

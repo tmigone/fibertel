@@ -10,6 +10,7 @@ export function sanitizeValue (value: string): string | number {
     ' MHz',
     ' dB'
   ]
+
   for (const unit of units) {
     value = value.replace(unit, '')
   }
