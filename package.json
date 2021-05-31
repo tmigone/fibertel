@@ -1,14 +1,19 @@
 {
-  "name": "fibertel-niveles",
+  "name": "fibertel",
   "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "bin": {
+    "fibertel-stats": "./bin/cli.js"
+  },
   "keywords": [
     "typescript"
   ],
   "scripts": {
     "clean": "rimraf build",
+    "build": "npm run clean && tsc",
+    "prepare": "npm run build",
     "test": "ava",
     "watch": "nodemon --watch src --ignore tests --ext js,ts,json --exec node -r ts-node/register/transpile-only src/index.ts"
   },
@@ -22,6 +27,9 @@
     "url": "https://github.com/tmigone/fibertel-niveles/issues"
   },
   "homepage": "https://github.com/tmigone/fibertel-niveles#readme",
+  "engines": {
+    "node": ">=12.4.0"
+  },
   "devDependencies": {
     "@types/node": "^15.6.0",
     "ava": "^3.15.0",

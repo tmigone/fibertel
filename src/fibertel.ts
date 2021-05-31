@@ -21,13 +21,17 @@ export interface FibertelStats {
 }
 
 export async function getStats (url: string = provisioningUrl): Promise<FibertelStats> {
-  const response = await axios(url)
+  try {
+    const response = await axios(url)
 
-  if (response.status !== 200) {
-    throw new Error(`Could not reach ${url}.`)
+    if (response.status !== 200) {
+      throw new Error('Invalid provisioning path.')
+    }
+
+    return parseStats(response.data)
+  } catch (error) {
+    throw new Error('Could not reach provisioning url.')
   }
-
-  return parseStats(response.data)
 }
 
 export function parseStats (html: string): FibertelStats {
