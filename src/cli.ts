@@ -1,7 +1,7 @@
 import { Command, flags } from '@oclif/command'
 import { getStats } from './fibertel'
 
-export class FibertelNiveles extends Command {
+export class Fibertel extends Command {
   static description = 'fibertel-niveles: utilidad para chequear valores de Tx, Rx y MER del cablemodem de Fibertel.'
 
   static flags = {
@@ -20,14 +20,13 @@ export class FibertelNiveles extends Command {
     interval: flags.integer({
       char: 'i',
       description: 'Intervalo de repetición en segundos entre cada obtención de niveles. ',
-      default: 30,
-      dependsOn: ['continuous']
+      default: 30
+      // dependsOn: ['continuous']
     })
   }
 
   async run (): Promise<void> {
-    const { flags } = this.parse(FibertelNiveles)
-
+    const { flags } = this.parse(Fibertel)
     await prettyStats(flags.url)
 
     if (flags.continuous) {

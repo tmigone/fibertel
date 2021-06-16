@@ -2,14 +2,18 @@
 
 const fs = require('fs')
 const path = require('path')
-const project = path.join(__dirname, '../tsconfig.json')
-const dev = fs.existsSync(project)
+
+const tsconfig = path.join(__dirname, '../tsconfig.json')
+const dev = fs.existsSync(tsconfig)
 
 if (dev) {
-  require('ts-node').register({ project })
+  const tsnode = require('ts-node')
+  tsnode.register({ tsconfig })
 }
 
-const { FibertelNiveles } = require(`../${dev ? 'src' : 'lib'}/cli`)
-FibertelNiveles
+const cli = `../${dev ? 'src' : 'lib'}/cli`
+const { Fibertel } = require(cli)
+
+Fibertel
   .run()
   .catch(require('@oclif/errors/handle'))
