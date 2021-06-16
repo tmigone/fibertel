@@ -42,7 +42,7 @@ jobs:
         node-version: '14.x'
         registry-url: 'https://registry.npmjs.org'
     - run: npm ci
-    - run: npm version ${{ needs.versionist.outputs.version }}
+    - run: npm version --no-git-tag-version ${{ needs.versionist.outputs.version }}
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
