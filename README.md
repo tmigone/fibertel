@@ -1,4 +1,4 @@
-# fibertel-niveles
+# fibertel
 
 Utilidad para monitorear los niveles de señal de los cable modems de Fibertel (Tx, Rx. MER).
 Obtiene la informacion del servicio de provisioning de Fibertel: http://provisioning.fibertel.com.ar/asp/nivelesPrima.asp
