@@ -18,9 +18,10 @@ Requiere node.js v12.4.0 o mayor.
 ## Uso
 
 ### CLI
-```
+
+```bash
 tomi@sirius: ✗ fibertel
---- Fibertel Stats ---
+--- Fibertel Niveles ---
 Tx: 44.5 dBmV
 Freq Tx: 38600 MHz
 Rx: 4.9 dBmV
@@ -29,6 +30,19 @@ MER: 38.9 dB
 Equipo: DPC3848VE
 Descripción: Cisco DPC3848VE DOCSIS 3.0 DB-WiFi(3x3) Apps Docway <>
 Versión OS: "dpc3800-v303r204318-200508aARG"
+```
+
+Opciones del comando:
+```bash
+fibertel: utilidad para chequear valores de Tx, Rx y MER del cablemodem de Fibertel.
+
+USAGE
+  $ fibertel
+
+OPTIONS
+  -i, --interval=interval  [default: 30] Intervalo de repetición en segundos entre cada obtención de niveles.
+  -t, --continuous         Obtener niveles de manera continua sin detener el programa.
+  -u, --url=url            [default: http://provisioning.fibertel.com.ar/asp/nivelesPrima.asp] URL de provisioning del cablemodem.
 ```
 
 ### Modulo
@@ -44,6 +58,13 @@ const const { getStats }  = require('fibertel')
 
 await getStats()
 ```
+
+## Modems soportados
+
+Librería testeada únicamente con los siguientes modems:
+- Cisco DPC3848VE
+
+PRs welcome :)
 
 ## ¿Están bien mis valores?
 

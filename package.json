@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
-    "fibertel-stats": "./bin/cli.js"
+    "fibertel-stats": "./bin/run"
   },
   "keywords": [
     "typescript"
@@ -13,21 +13,21 @@
   "scripts": {
     "clean": "rimraf build",
     "build": "npm run clean && tsc",
-    "bin": "node bin/cli.js",
+    "bin": "node bin/run",
     "prepare": "npm run build",
     "test": "ava",
     "watch": "nodemon --watch src --ignore tests --ext js,ts,json --exec node -r ts-node/register/transpile-only src/index.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tmigone/fibertel-niveles.git"
+    "url": "git+https://github.com/tmigone/fibertel.git"
   },
   "author": "Tomás Migone <tomasmigone@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tmigone/fibertel-niveles/issues"
+    "url": "https://github.com/tmigone/fibertel/issues"
   },
-  "homepage": "https://github.com/tmigone/fibertel-niveles#readme",
+  "homepage": "https://github.com/tmigone/fibertel#readme",
   "engines": {
     "node": ">=12.4.0"
   },

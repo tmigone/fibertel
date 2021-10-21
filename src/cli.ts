@@ -2,7 +2,7 @@ import { Command, flags } from '@oclif/command'
 import { getStats } from './fibertel'
 
 export class Fibertel extends Command {
-  static description = 'fibertel-niveles: utilidad para chequear valores de Tx, Rx y MER del cablemodem de Fibertel.'
+  static description = 'fibertel: utilidad para chequear valores de Tx, Rx y MER del cablemodem de Fibertel.'
 
   static flags = {
     url: flags.string({
