@@ -5,10 +5,15 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
-    "fibertel-stats": "./bin/run"
+    "fibertel": "./bin/run"
   },
   "keywords": [
-    "typescript"
+    "typescript",
+    "fibertel",
+    "niveles",
+    "stats",
+    "internet",
+    "monitor"
   ],
   "scripts": {
     "clean": "rimraf build",

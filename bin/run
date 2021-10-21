@@ -11,7 +11,7 @@ if (dev) {
   tsnode.register({ tsconfig })
 }
 
-const cli = `../${dev ? 'src' : 'lib'}/cli`
+const cli = `../${dev ? '' : 'build'}/src/cli`
 const { Fibertel } = require(cli)
 
 Fibertel
