@@ -92,7 +92,7 @@ El modem puede funcionar correctamente con valores de Tx mayores a los máximos 
 ### MER
 | Estado                  | Mínimo      |
 |-------------------------|-------------|
-| Mínimo                  | 29 dBmV     |
+| Aceptable                  | 29 dBmV     |
 | Recomendado             | 33 dBmV    |
 
 Fuentes: 
