@@ -68,22 +68,38 @@ PRs welcome :)
 
 ## ¿Están bien mis valores?
 
->Los valores apropiados varían de acuerdo a la versión de DOCSIS (un estandar internacional para la transmisión de datos), aunque podemos encontrar algunos valores de referencia en [http://www.dslreports.com/faq/16085](), que se detallan a continuación.
->### Rx
->| Estado                  | Mínimo      | Máximo      |
->|-------------------------|-------------|-------------|
->| Recomendado             | -7 dBmV     | +7 dBmV     |
->| Aceptable               | -10 dBmV    | +10 dBmV    |
->| Máximo tolerable        | -15 dBmV    | +15 dBmV    |
->| Fuera de Especificación | < -15 dBmV  | > +15 dBmV  |
->
->### Tx
->
->| Versión     | Mínimo    | Máximo    |
->|-------------|-----------|-----------|
->| DOCSIS 3.1  | +35 dBmV  | +47 dBmV  |
->| DOCSIS 3.0  | +35 dBmV  | +49 dBmV  |
-<sub>Fuente: https://github.com/fcingolani/fibertel-stats#est%C3%A1n-bien-mis-valores</sub>
+Los valores apropiados varían de acuerdo a la versión de DOCSIS (un estandar internacional para la transmisión de datos), aunque podemos encontrar algunos valores de referencia en [http://www.dslreports.com/faq/16085](http://www.dslreports.com/faq/16085), que se detallan a continuación.
+
+### Rx
+| Estado                  | Mínimo      | Máximo      |
+|-------------------------|-------------|-------------|
+| Recomendado             | -7 dBmV     | +7 dBmV     |
+| Aceptable               | -10 dBmV    | +10 dBmV    |
+| Máximo tolerable        | -15 dBmV    | +15 dBmV    |
+| Fuera de Especificación | < -15 dBmV  | > +15 dBmV  |
+
+### Tx
+
+| Versión     | Mínimo    | Máximo    |
+|-------------|-----------|-----------|
+| DOCSIS 3.1 - Recomendado  | +35 dBmV  | +47 dBmV  |
+| DOCSIS 3.1 - Aceptable  | +47 dBmV  | +50 dBmV  |
+| DOCSIS 3.0 - Recomendado | +35 dBmV  | +49 dBmV  |
+| DOCSIS 3.0 - Aceptable | +49 dBmV  | +52 dBmV  |
+
+El modem puede funcionar correctamente con valores de Tx mayores a los máximos aceptables, pero como resultado la conexión se verá impactada (velocidad reducida, perdida de paquetes, etc).
+
+### MER
+| Estado                  | Mínimo      |
+|-------------------------|-------------|
+| Mínimo                  | 29 dBmV     |
+| Recomendado             | 33 dBmV    |
+
+Fuentes: 
+- https://github.com/fcingolani/fibertel-stats#est%C3%A1n-bien-mis-valores
+- http://www.dslreports.com/faq/16085
+- https://atencion-clientes.com/fibertel
+- http://provisioning.fibertel.com.ar/ayuda/SoporteOnLine_archivos/Troubleshooting.htm
 
 ## ¿Puedo hacer algo para mejorar los valores?
 TODO
