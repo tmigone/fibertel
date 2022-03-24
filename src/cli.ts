@@ -22,12 +22,23 @@ export class Fibertel extends Command {
       description: 'Intervalo de repetición en segundos entre cada obtención de niveles. ',
       default: 30
       // dependsOn: ['continuous']
+    }),
+
+    json: flags.boolean({
+      char: 'j',
+      description: 'Salida en formato JSON.',
+      default: false
     })
   }
 
   async run (): Promise<void> {
     const { flags } = this.parse(Fibertel)
-    await prettyStats(flags.url)
+
+    if (flags.json) {
+        await jsonStats(flags.url)
+    } else {
+        await prettyStats(flags.url)
+    }
 
     if (flags.continuous) {
       while (true) {
@@ -55,6 +66,16 @@ async function prettyStats (url: string): Promise<void> {
     console.log(`Equipo: ${stats.equipo}`)
     console.log(`Descripción: ${stats.descripcion}`)
     console.log(`Versión OS: ${stats.versionOs}`)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function jsonStats (url: string): Promise<void> {
+  try {
+    const stats = await getStats(url)
+    const out = JSON.stringify(stats)
+    console.log(out)
   } catch (error) {
     console.log(error)
   }
